@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+<section id="contact_form">
+  <h2>Contact Form</h2>
+  <form method="post" action="/submit">
+
+    <label for="name">Full Name:</label><br>
+    <input type="text" id="name" name="name" pattern ="\S+\s+\S+" required><br>
+
+    <br>
+
+    <label for="emailaddress">Email Address:</label><br>
+    <input type="email" id="emailaddress" name="email" required><br>
+
+    <br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>
+
+    <br>
+
+    <fieldset>
+        <legend>Feedback Category</legend>
+
+        <label for="feedback">Select a category:</label><br>
+        <select id="feedback" name="feedback" required>
+            <option value="" disabled selected>Select One</option>
+            <option value="customer_service">Customer Service Line</option>
+            <option value="faqs">Frequently Asked Questions</option>
+            <option value="in_person_experience">In Person Experience</option>
+            <option value="technical_difficulties">Technical Difficulties</option>
+            <option value="other">Other</option>
+        </select>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend>Preferred Contact Method</legend>
+
+        <input type="radio" id="contact_inperson" name="preferred_contact" value="In Person" required>
+        <label for="contact_inperson">In Person</label><br>
+
+        <input type="radio" id="contact_phone" name="preferred_contact" value="Phone">
+        <label for="contact_phone">Phone</label><br>
+
+        <input type="radio" id="contact_text" name="preferred_contact" value="Text">
+        <label for="contact_text">Text</label><br>
+
+        <input type="radio" id="contact_email" name="preferred_contact" value="Email">
+        <label for="contact_email">Email</label>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend>Preferred Features</legend>
+
+        <input type="checkbox" id="feature1" name="features" value="Availability">
+        <label for="feature1">24/7 Customer Service</label><br>
+
+        <input type="checkbox" id="feature2" name="features" value="Service">
+        <label for="feature2">More Responsive Feedback</label><br>
+
+        <input type="checkbox" id="feature3" name="features" value="AI" checked>
+        <label for="feature3">Ability to Skip AI Support</label>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend> Comments</legend>
+        <textarea id="comments" name="comments" required></textarea><br>
+    </fieldset>
+    <br>
+
+    <input type="submit" value="Submit">
+
+</form>
+</section>
+</body>
+</html>
